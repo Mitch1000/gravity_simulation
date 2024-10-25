@@ -1,0 +1,42 @@
+{
+  "name": "gravity_simulation",
+  "version": "1.0.0",
+  "description": "For Fun",
+  "private": false,
+  "engines": {
+    "npm": ">=0.35.1",
+    "node": ">=17.3.0"
+  },
+  "scripts": {
+    "test": "run-test",
+    "build-prod": "echo \"Building optimized production version of application ...\" && webpack --config webpack.prod.config.js",
+    "build-dev-serve-hot-reload": "echo \"Building dev version of application (hot-reloaded) at http://localhost:3004 ...\" && webpack-dev-server --config webpack.dev.config.js --hot --port 3004",
+    "static-serve": "echo \"Serving application statically at 0.0.0.0:3004 ...\" && http-server -a 0.0.0.0 -p 3004 -c-1 ./dist -s",
+    "dev": "npm run build-dev-serve-hot-reload",
+    "start": "npm run build-dev-serve-hot-reload"
+  },
+  "keywords": [
+    "fun",
+    "games"
+  ],
+  "author": "Mitch",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-vue": "^8.4.1",
+    "http-server": "^14.0.0",
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.7.2"
+  },
+  "dependencies": {
+    "install": "^0.13.0",
+    "npm": "^10.5.2",
+    "p5": "^1.4.1",
+    "restify": "^8.6.0",
+    "runge-kutta": "^0.0.1",
+    "three": "^0.136.0"
+  }
+}
