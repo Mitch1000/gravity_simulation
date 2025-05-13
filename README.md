@@ -12,5 +12,4 @@ Running Development:
 
 `yarn` then `yarn run dev`
 
-https://github.com/user-attachments/assets/8c39edf4-0487-40cc-98a7-04e472f06ee7
-
+![gravity_simulation](https://github.com/user-attachments/assets/58469fd4-76b1-4d79-99cf-79e41319550d)
