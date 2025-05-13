@@ -49,6 +49,7 @@ function code(p5) {
   return {
     setup() {
       p5.createCanvas(window.innerWidth, window.innerHeight, p5.WEBGL);
+      p5.pixelDensity(5);
       setTimeout(() => {
         canvas = document.getElementById('defaultCanvas0');
         canvas.style.position = 'absolute';
