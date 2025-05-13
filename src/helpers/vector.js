@@ -1,3 +1,14 @@
+
+function parseString(s) {
+  let string = (s / 1000).toString().slice(0, 6);
+
+  if (string[string.length - 1] === '.') {
+    string = string.replace('.', '');
+  }
+
+  return string;
+}
+
 class Vector {
   constructor({ x = 0, y = 0, z = 0 }) {
     this.x = x;
@@ -15,17 +26,16 @@ class Vector {
     return distance;
   }
 
-  toString() {
-    const parseString = (s) => {
-      let string = (s / 1000).toString().slice(0, 6);
+  toStringX() {
+    return parseString(this.x);
+  }
 
-      if (string[string.length - 1] === '.') {
-        string = string.replace('.', '');
-      }
+  toStringY() {
+    return parseString(this.y);
+  }
 
-      return string;
-    };
-    return `&nbsp; &nbsp; x: ${parseString(this.x)} units <br>&nbsp; &nbsp;  y: ${parseString(this.y)} units`;
+  toStringZ() {
+    return parseString(this.z);
   }
 }
 

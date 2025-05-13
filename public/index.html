@@ -15,7 +15,7 @@
   <body>
     <script src="main.js"></script>
     <div class="app">
-      <div class="slider-container">
+      <div class="slider-container slider-container--time-slider">
         <div class="slider-info">
         &#916;t
         </div>
@@ -75,24 +75,42 @@
           </div>
           <div id="position">
             Position:
-            <div>
-              <span class="value"> </span>
-              <input class="info-input info-input-x info-input--scale" />
-              <input class="info-input info-input-y info-input--scale" />
+            <div class="vector-display">
+              <div class="value-x">
+                <span class="value"> </span>
+              </div>
+              <div class="value-y">
+                <span class="value"> </span>
+              </div>
+              <input data-vector-key="x" class="info-input info-input-x info-input--scale" />
+              <input data-vector-key="y" class="info-input info-input-y info-input--scale" />
             </div>
           </div>
-          <div id="velocity"> Velocity:
-            <div>
-              <span class="value"> </span>
-              <input class="info-input info-input-x info-input--scale" />
-              <input class="info-input info-input-y info-input--scale" />
+          <div id="velocity">
+            Velocity:
+            <div class="vector-display">
+              <div class="value-x">
+                <span class="value"> </span>
+              </div>
+              <div class="value-y">
+                <span class="value"> </span>
+              </div>
+
+              <input data-vector-key="x" class="info-input info-input-x info-input--scale" />
+              <input data-vector-key="y" class="info-input info-input-y info-input--scale" />
             </div>
           </div>
-          <div id="acceleration" style="cursor: initial;"> Acceleration:
-            <div>
-              <span class="value" style="cursor: initial;"> </span>
-              <input class="info-input info-input-x info-input--scale" />
-              <input class="info-input info-input-y info-input--scale" />
+          <div id="acceleration" style="cursor: initial;">
+            Acceleration:
+            <div class="vector-display">
+              <div class="value-x">
+                <span class="value"> </span>
+              </div>
+              <div class="value-y">
+                <span class="value"> </span>
+              </div>
+              <input data-vector-key="x" class="info-input info-input-x info-input--scale" />
+              <input data-vector-key="y" class="info-input info-input-y info-input--scale" />
             </div>
           </div>
 
@@ -117,6 +135,10 @@
 </html>
 
 <style>
+  body {
+    overflow: hidden;
+  }
+
   .app {
     position: absolute;
     z-index: 2000;
@@ -136,13 +158,14 @@
   .senario-select-container {
     position: absolute;
     top: 2vh;
-    left: 80vw;
     width: 100vw;
     height: 100vh;
     z-index: 2001;
     pointer-events: none;
     overflow-y: hidden;
+    text-align: end;
   }
+
   .info-box-container {
     position: absolute;
     top: 0;
@@ -167,7 +190,7 @@
   	border-radius: 10px;
   	font-family: Roboto;
   	font-size: 18px;
-  	padding: 12px;
+  	padding: 12px 12px 2px 12px;
   	text-transform: uppercase;
   	line-height: 26px;
   	font-weight: 500;
@@ -184,6 +207,7 @@
     pointer-events: initial;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 16px;
+    margin-right: 2%;
   }
 
   .slider--handle {
@@ -231,13 +255,16 @@
     background: white;
     transform: rotate(45deg);
   }
+
   .slider-container {
-    margin-left: 2%; 
     margin-top: 2%; 
     margin-right: 2%;
-    margin-top: 2%;
     margin-left: auto;
     position: relative;
+  }
+
+  .slider-container--time-slider {
+    margin-top: 14em;
   }
 
   .slider {
@@ -393,5 +420,8 @@
     transform: scale(1);
     opacity: 0;
     transition: all 0.4s ease;
+  }
+  div.vector-display * span {
+    margin-left: 1em;
   }
 </style>

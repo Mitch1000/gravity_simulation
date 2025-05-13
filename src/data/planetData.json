@@ -1,0 +1,129 @@
+{
+  "Solar System": [
+    {
+      "name": "Sun",
+      "position": { "x": 0, "y": 0, "z": 0 },
+      "velocity": { "x": 0, "y": 0, "z": 0 },
+      "mass": 1988500,
+      "color": [254, 223, 107],
+      "density": 1408,
+      "scale": 3
+    },
+    {
+      "name": "Mercury",
+      "position": { "x": 58, "y": 0, "z": 0 },
+      "velocity": { "x": 0, "y": -47360, "z": 0 },
+      "mass": 0.33010,
+      "color": [242, 74, 40],
+      "density": 5429,
+      "scale": 50,
+      "isToDrawForceVector": false
+    },
+    {
+      "name": "Venus",
+      "position": { "x": -108.208, "y": 0, "z": 0 },
+      "velocity": { "x": 0, "y": -35020, "z": 0 },
+      "mass": 4.8673,
+      "color": [188, 116, 32],
+      "density": 5243,
+      "scale": 50,
+      "isToDrawForceVector": false
+    },
+    {
+      "name": "Earth",
+      "position": { "x": 150.08, "y": 0, "z": 0 },
+      "velocity": { "x": 0, "y": -29780 },
+      "mass": 5.9722,
+      "color": [67, 121, 200],
+      "density": 5513,
+      "scale": 50
+    },
+    {
+      "name": "Ceres",
+      "position": { "x": 413, "y": 0, "z": 0 },
+      "velocity": { "x": 0, "y": -17920, "z": 0 },
+      "mass": 0.0009393,
+      "color": [178, 178, 178],
+      "density": 3344,
+      "scale": 34,
+      "isToDrawForceVector": false
+    },
+    {
+      "name": "Mars",
+      "position": { "x": 228, "y": 0, "z": 0 },
+      "velocity": { "x": 0, "y": -24080, "z": 0 },
+      "mass": 0.64169,
+      "color": [132, 52, 20],
+      "density": 3934,
+      "scale": 50,
+      "isToDrawForceVector": false
+    },
+    {
+      "name": "Jupiter",
+      "position": { "x": 778, "y": 0, "z": 0 },
+      "velocity": { "x": 0, "y": -13060, "z": 0 },
+      "mass": 1898.13,
+      "color": [247, 239, 129],
+      "density": 1326,
+      "scale": 12
+    },
+    {
+      "name": "Saturn",
+      "position": { "x": 1451, "y": 0, "z": 0 },
+      "velocity": { "x": 0, "y": -9670, "z": 0 },
+      "mass": 568.32,
+      "color": [215, 180, 119],
+      "density": 687,
+      "scale": 12
+    },
+    {
+      "name": "Neptune",
+      "position": { "x": 4472.2, "y": 0, "z": 0 },
+      "velocity": { "x": 0, "y": -5450, "z": 0 },
+      "mass": 102.409,
+      "color": [57, 85, 228],
+      "density": 1638,
+      "scale": 40,
+      "isToDrawForceVector": true
+    },
+    {
+      "name": "Pluto",
+      "position": { "x": 5906.38, "y": 0, "z": 0 },
+      "velocity": { "x": 0, "y": -4640, "z": 0 },
+      "mass": 0.01303,
+      "color": [209, 176, 143],
+      "density": 1854,
+      "scale": 500,
+      "isToDrawForceVector": false
+    }
+  ],
+  "Chaotic": [
+    {
+      "name": "Sun One",
+      "position": { "x": 746.156, "y": 0, "z": 0 },
+      "velocity": { "x": 0, "y": 324.677, "z": 0 },
+      "color": [254, 223, 107],
+      "density": 1854,
+      "mass": 10000,
+      "scale": 10 
+    },
+    {
+      "name": "Sun Two",
+      "position": { "x": -373.078, "y": 238.313, "z": 0 },
+      "velocity": { "x": 764.226, "y": -162.339, "z": 0 },
+      "density": 1854,
+      "color": [242, 74, 40],
+      "mass": 10000,
+      "scale": 10
+    },
+    {
+      "name": "Sun Three",
+      "position": { "x": -373.078, "y": -238.313, "z": 0 },
+      "velocity": { "x": -764.226, "y": -162.339, "z": 0 },
+      "density": 1854,
+      "color": [67, 121, 200],
+      "mass": 10000,
+      "scale": 10
+    }
+  ]
+}
