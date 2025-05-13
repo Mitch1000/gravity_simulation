@@ -5,6 +5,7 @@ import PhysicsBody from './physicsBody';
 let intitialTimeScale = 10;
 let isYearCounted = true;
 let yearCount = new Date().getFullYear();
+const initialZoom = 0.01;
 
 //TODO: Refactor for Single Responsibility principle 
 
@@ -60,6 +61,7 @@ export function setInitialTimeScale(scenarioKey) {
 export function setupScenarioUI({
   currentScenario, 
   timeScale, 
+  zoom, 
   distanceUnitMultiplier,
   setPhysicsBodies,
   setTimeScale,
@@ -79,16 +81,22 @@ export function setupScenarioUI({
     }
 
     currentTimeScale = getTimeScale();
-    console.log('currentTimeScale', currentTimeScale);
 
     setTimeScale(currentTimeScale);
   };
 
   const zoomSliderEl = document.getElementById('zoom-slider');;
-  const zoomHandler = handleSlider(setZoom, zoomSliderEl);
 
+  const zoomSetter = (sliderValue) => {
+    const newZoom = zoom + (0.01 * sliderValue);
+    setZoom(newZoom);
+  }; 
+  const zoomHandler = handleSlider(zoomSetter, zoomSliderEl);
+        
   const timeSliderEl = document.getElementById('time-slider');
+
   const timeHandler = handleSlider(updateTimeConstant, timeSliderEl);
+
   const scenarioSelectEl = document.getElementById('senario-select');
 
   Object.keys(planetData).forEach((scenarioKey) => {
@@ -102,14 +110,15 @@ export function setupScenarioUI({
   scenarioSelectEl.addEventListener('click', (event) => event.preventDefault());
   const handleScenarioSelect = (event) => {
     currentScenario = event.currentTarget.value;
-    // Reset sliders
-    timeSliderEl.style.transform = 'translateY(0px)';
-    zoomSliderEl.style.transform = 'translateY(0px)';
-    timeHandler.currentPosition = 0;
-    zoomHandler.currentPosition = 0;
 
     const newTimeScale = setInitialTimeScale(currentScenario);
     setTimeScale(newTimeScale);
+    setZoom(initialZoom);
+
+    // Reset sliders
+    timeHandler.reset();
+    zoomHandler.reset();
+
     const physicsBodies = generatePhysicsBodies(currentScenario, distanceUnitMultiplier);
     setPhysicsBodies(physicsBodies);
   };

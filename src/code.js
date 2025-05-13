@@ -67,13 +67,14 @@ function code(p5) {
         timeScale = value;
       };
 
-      const setZoom = (sliderValue) => {
-        zoom += 0.01 * sliderValue;
+      const setZoom = (value) => {
+        zoom = value;
       };
 
       setupScenarioUI({
         currentScenario,
         timeScale,
+        zoom,
         distanceUnitMultiplier,
         setPhysicsBodies,
         setTimeScale,
@@ -194,7 +195,6 @@ function code(p5) {
       const handleBoxClick = () => {
         isInfoBoxClicked = true;
       };
-
 
       const [clickedBody] = physicsBodies.filter((body) => {
         const d = denormalizer;

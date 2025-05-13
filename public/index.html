@@ -15,32 +15,53 @@
   <body>
     <script src="main.js"></script>
     <div class="app">
-      <div class="slider-container slider-container--time-slider">
-        <div class="slider-info">
-        &#916;t
-        </div>
-        <div class="slider">
-          <div id="time-slider" class="slider--handle">
-            <div class="slider--handle-scaler">
-              <div class="slider--handle-box"></div>
+      <div class="control-overlay">
+        <div class="sliders">
+          <div class="sliders-holder">
+            <div class="slider-container">
+              <div class="slider-info">
+                &#916;t
+              </div>
+              <div
+                id="time-slider"
+                class="slider--handle"
+              >
+                <div class="slider--handle-scaler">
+                  <div
+                    class="slider--handle-box"
+                  >
+                  </div>
+                </div>
+              </div>
+              <div class="slider" ></div>
             </div>
+
+            <div class="slider-container">
+              <div class="slider-info">
+                <span class="material-symbols-outlined">
+                  search
+                </span>
+              </div>
+              <div
+                id="zoom-slider"
+                class="slider--handle"
+              >
+                <div class="slider--handle slider--handle-zoom">
+                  <div class="slider--handle-scaler">
+                    <div
+                      class="slider--handle-box"
+                    >
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slider" ></div>
+            </div>
+
           </div>
         </div>
       </div>
-      <div class="slider-container">
-        <div class="slider-info">
-          <span class="material-symbols-outlined">
-            search
-          </span>
-        </div>
-        <div class="slider">
-          <div id="zoom-slider" class="slider--handle slider--handle-zoom">
-            <div class="slider--handle-scaler">
-              <div class="slider--handle-box"></div>
-            </div>
-          </div>
-        </div>
-      </div>
+
 
       <div class="info-box-container">
         <div id="info-box" class="info-box">
@@ -213,20 +234,38 @@
   .slider--handle {
     position: absolute;
     top: 70%;
-    width: 14px; 
-    height: 14px; 
-    right: -6px;
+    right: 0;
+    width: 100%;
+    height: auto;
     cursor: pointer;
-  }
+    z-index: 1;
+}
   .slider--handle-zoom {
     top: 50%;
   }
   
   .slider--handle-scaler {
     transform: scaleY(1.4);
-    width: 100%;
-    height: 100%;
+    width: 20px;
+    height: 20px;
+    margin: auto;
   }
+
+  @media (width <= 1200px) {
+    .slider--handle-scaler {
+      width: 3vw;
+      height: 3vw;
+    }
+  }
+  
+  @media (width <= 1000px) {
+    .slider--handle-scaler {
+      width: 4vw;
+      height: 4vw;
+      padding: 0 20px;
+    }
+  }
+
   .mass-slider--handle-scaler {
     transform: scaleX(12.4);
     width: 100%;
@@ -248,19 +287,43 @@
     background: rgb(8, 4, 4);
     transform: rotate(45deg);
   }
+  .control-overlay {
+    overflow: hidden;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    max-width: 100vw;
+    max-height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  .sliders {
+     width: 100%;
+     display: flex;
+     justify-content: flex-end;
+     position: absolute;
+     top: 7%;
+     left: 0;
+     z-index: 1;
+  }
 
   .slider--handle-box {
-    width: 100%; 
-    height: 100%; 
-    background: white;
+    width: 100%;
+    height: 100%;
+    background: #dcdcc8;
     transform: rotate(45deg);
   }
 
   .slider-container {
-    margin-top: 2%; 
-    margin-right: 2%;
-    margin-left: auto;
+    margin-left: 2%;
+    margin-top: 2%;
+    margin-right: 40px;
+    margin-top: 2%;
     position: relative;
+    margin-bottom: 40px;
+    width: 4vw;
   }
 
   .slider-container--time-slider {
@@ -270,7 +333,7 @@
   .slider {
     position: relative;
     width: 2px;
-    height: 200px;
+    height: 32vh;
     background: #d4d4d5;
     border-radius: 2px;
     margin-left: auto;
@@ -278,9 +341,18 @@
   }
 
   .slider-info {
-    color: white;
+    color: #f3f3e9;
     font-size: 20px;
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 5px;
+    text-align: center;
+  }
+  
+  @media (width <= 1200px) {
+    .slider-info {
+      font-size: 35px;
+    }
   }
   .material-symbols-outlined {
     font-variation-settings:
